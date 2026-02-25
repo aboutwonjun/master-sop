@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>합격 수기 & 리뷰 — MasterSOP</title>
+    <meta name="description" content="MasterSOP 실제 합격 수기 아카이브 — 개인정보 마스킹 처리된 신뢰도 높은 합격 사례" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .filter-bar {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .filter-btn {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.5rem 1.2rem;
+            border: 1px solid var(--navy-border);
+            border-radius: 2px;
+            color: var(--text-muted);
+            background: transparent;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: var(--gold);
+            color: var(--gold);
+            background: rgba(201, 169, 110, 0.06);
+        }
+
+        .review-card-lg {
+            background: var(--navy-mid);
+            border: 1px solid var(--navy-border);
+            border-radius: var(--radius-md);
+            padding: 2rem 2.2rem;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-card-lg:hover {
+            border-color: rgba(201, 169, 110, 0.25);
+            transform: translateY(-3px);
+        }
+
+        .review-school {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.8rem;
+        }
+
+        .review-quote-lg {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--white);
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .review-tags-row {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.2rem;
+        }
+
+        .data-row {
+            background: var(--navy);
+            border: 1px solid var(--navy-border);
+            border-radius: var(--radius-sm);
+            padding: 1rem 1.2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .data-cell {}
+
+        .data-cell strong {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .data-cell span {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="nav" id="mainNav">
+        <div class="nav-logo">Master<span>SOP</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="reviews.html" class="active">Reviews</a></li>
+            <li><a href="inquiry.html">문의하기</a></li>
+        </ul>
+        <a href="inquiry.html" class="nav-cta">견적 요청</a>
+        <button class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </nav>
+
+    <!-- Page Header -->
+    <section
+        style="padding: 9rem 0 4rem; background: linear-gradient(180deg, var(--navy-mid) 0%, var(--navy) 100%); border-bottom:1px solid var(--navy-border);">
+        <div class="container">
+            <div class="fade-up" style="max-width:60ch;">
+                <p class="t-subheading" style="margin-bottom:0.8rem;">Archives & Success Stories</p>
+                <div class="gold-line"></div>
+                <h1 class="t-heading">숫자가 증명하는<br /><span class="gold">실제 합격 기록</span></h1>
+                <p style="margin-top:1.2rem; color:var(--text-body);">모든 수기는 실명 동의 후 개인정보(이름, 학교, 연락처)를 마스킹 처리한 진본입니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="authority-bar">
+        <div class="container">
+            <div class="authority-grid">
+                <div class="authority-item fade-up">
+                    <span class="authority-num">340+</span>
+                    <div class="authority-label">누적 합격 건수</div>
+                </div>
+                <div class="authority-item fade-up" style="transition-delay:0.1s">
+                    <span class="authority-num">89건</span>
+                    <div class="authority-label">장학금 수혜</div>
+                </div>
+                <div class="authority-item fade-up" style="transition-delay:0.2s">
+                    <span class="authority-num">Top 30</span>
+                    <div class="authority-label">최고 합격 랭킹</div>
+                </div>
+                <div class="authority-item fade-up" style="transition-delay:0.3s">
+                    <span class="authority-num">4.9/5</span>
+                    <div class="authority-label">평균 만족도</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter & Reviews -->
+    <section class="section">
+        <div class="container">
+
+            <div class="filter-bar fade-up">
+                <button class="filter-btn active" data-filter="all">전체</button>
+                <button class="filter-btn" data-filter="sop">SOP</button>
+                <button class="filter-btn" data-filter="ps">Personal Statement</button>
+                <button class="filter-btn" data-filter="package">패키지</button>
+                <button class="filter-btn" data-filter="scholarship">장학금 수혜</button>
+                <button class="filter-btn" data-filter="us">미국</button>
+                <button class="filter-btn" data-filter="uk">영국</button>
+            </div>
+
+            <div class="reviews-grid" id="reviewsContainer">
+
+                <!-- Card 1 -->
+                <div class="review-card-lg fade-up" data-tags="sop scholarship us">
+                    <div class="review-school">🇺🇸 Columbia University · MA Applied Linguistics</div>
+                    <div class="data-row">
+                        <div class="data-cell"><strong>Columbia</strong><span>합격교</span></div>
+                        <div class="data-cell"><strong>장학금</strong><span>Merit-based</span></div>
+                        <div class="data-cell"><strong>SOP</strong><span>서비스</span></div>
+                    </div>
+                    <p class="review-quote-lg">"제 초안은 그냥 '이력서'였어요. 경험을 나열하는 수준이었죠. 교수님 손을 거친 후 제 SOP는 '목적이 있는 연구자의 선언문'이
+                        됐습니다. 제가 왜 Applied Linguistics를 공부해야 하는지, 그 필연성을 문장 하나하나가 증명하고 있었어요. Columbia 장학금으로 갑니다."</p>
+                    <div class="review-tags-row">
+                        <span class="chip chip-gold">장학금</span>
+                        <span class="chip chip-blue">인문계</span>
+                    </div>
+                    <div class="review-meta">
+                        <div class="review-avatar">K</div>
+                        <div class="review-info">
+                            <strong>K** 님</strong>
+                            <span>Columbia MA · 2024년 가을 입학</span>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="review-card-lg fade-up" style="transition-delay:0.1s" data-tags="sop us">
+                    <div class="review-school">🇺🇸 Stanford University · MS Electrical Engineering</div>
+                    <div class="data-row">
+                        <div class="data-cell"><strong>Stanford</strong><span>합격교</span></div>
+                        <div class="data-cell"><strong>이공계</strong><span>전공</span></div>
+                        <div class="data-cell"><strong>SOP</strong><span>서비스</span></div>
+                    </div>
+                    <p class="review-quote-lg">"이공계 전공자라 영어 글쓰기가 가장 두려웠어요. 제 연구 경험이 분명히 있는데 그걸 어떻게 영어로, 그것도 '학술적으로' 써야
+                        하는지 막막했습니다. 논리 구조를 완전히 새로 잡아주시고, 교수님 연구실과 어떻게 연결되는지도 같이 써주셨어요. Stanford 합격 연락을 받았습니다."</p>
+                    <div class="review-tags-row">
+                        <span class="chip chip-blue">이공계</span>
+                    </div>
+                    <div class="review-meta">
+                        <div class="review-avatar">P</div>
+                        <div class="review-info">
+                            <strong>P** 님</strong>
+                            <span>Stanford MS · 2024년 가을 입학</span>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="review-card-lg fade-up" style="transition-delay:0.2s" data-tags="ps scholarship uk">
+                    <div class="review-school">🇬🇧 UCL · MSc Education</div>
+                    <div class="data-row">
+                        <div class="data-cell"><strong>3/4교</strong><span>합격률</span></div>
+                        <div class="data-cell"><strong>전액</strong><span>UCL 장학금</span></div>
+                        <div class="data-cell"><strong>PS</strong><span>서비스</span></div>
+                    </div>
+                    <p class="review-quote-lg">"단순 교정인 줄 알았는데, 내러티브 자체를 재설계해 주셨어요. 지원했던 4개교 중 3개교 합격, UCL 전액 장학금을 받았습니다.
+                        가장 놀라웠던 건 '나도 몰랐던 내 이야기의 연결고리'를 찾아주신 것이었어요."</p>
+                    <div class="review-tags-row">
+                        <span class="chip chip-gold">전액장학</span>
+                        <span class="chip chip-green">영국</span>
+                    </div>
+                    <div class="review-meta">
+                        <div class="review-avatar">J</div>
+                        <div class="review-info">
+                            <strong>J** 님</strong>
+                            <span>UCL MSc · 2023년 입학</span>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="review-card-lg fade-up" style="transition-delay:0.05s" data-tags="package scholarship us">
+                    <div class="review-school">🇺🇸 Harvard Extension · ALM Liberal Arts</div>
+                    <div class="data-row">
+                        <div class="data-cell"><strong>Harvard</strong><span>합격교</span></div>
+                        <div class="data-cell"><strong>패키지</strong><span>서비스</span></div>
+                        <div class="data-cell"><strong>3개월</strong><span>준비 기간</span></div>
+                    </div>
+                    <p class="review-quote-lg">"직장을 다니면서 준비했기 때문에 시간이 부족했어요. 패키지 서비스를 선택했는데, 전략부터 SOP, CV까지 체계적으로 관리해주셔서
+                        결국 목표했던 학교에 합격했습니다. 혼자였으면 절대 불가능했을 것 같아요."</p>
+                    <div class="review-tags-row">
+                        <span class="chip chip-gold">패키지</span>
+                        <span class="chip chip-blue">직장인</span>
+                    </div>
+                    <div class="review-meta">
+                        <div class="review-avatar">L</div>
+                        <div class="review-info">
+                            <strong>L** 님</strong>
+                            <span>Harvard Extension · 2024년 봄 입학</span>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="review-card-lg fade-up" style="transition-delay:0.15s" data-tags="sop uk">
+                    <div class="review-school">🇬🇧 Oxford University · MSc Social Science of the Internet</div>
+                    <div class="data-row">
+                        <div class="data-cell"><strong>Oxford</strong><span>합격교</span></div>
+                        <div class="data-cell"><strong>1st Draft</strong><span>납품 회차</span></div>
+                        <div class="data-cell"><strong>SOP</strong><span>서비스</span></div>
+                    </div>
+                    <p class="review-quote-lg">"Oxford SOP는 '왜 이 연구를 해야 하는가'에 대한 답이 매우 명확해야 한다는 걸 처음 알았어요. 첫 번째 납품본으로도
+                        충분히 강력했습니다. 교수님의 개정 없이 제출해서 합격했습니다."</p>
+                    <div class="review-tags-row">
+                        <span class="chip chip-green">영국</span>
+                        <span class="chip chip-blue">사회과학</span>
+                    </div>
+                    <div class="review-meta">
+                        <div class="review-avatar">C</div>
+                        <div class="review-info">
+                            <strong>C** 님</strong>
+                            <span>Oxford MSc · 2023년 가을 입학</span>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="review-card-lg fade-up" style="transition-delay:0.25s" data-tags="ps scholarship us">
+                    <div class="review-school">🇺🇸 NYU Stern · MBA</div>
+                    <div class="data-row">
+                        <div class="data-cell"><strong>NYU</strong><span>합격교</span></div>
+                        <div class="data-cell"><strong>장학금</strong><span>$15,000</span></div>
+                        <div class="data-cell"><strong>PS</strong><span>서비스</span></div>
+                    </div>
+                    <p class="review-quote-lg">"MBA PS는 커리어 전환의 '필연성'을 설득해야 하는 글이잖아요. 교수님이 제 커리어를 분석해서 왜 제가 지금 이 결정을 해야
+                        하는지를 완벽한 논리로 만들어주셨어요. Stern 합격에 장학금까지 받았습니다."</p>
+                    <div class="review-tags-row">
+                        <span class="chip chip-gold">장학금</span>
+                        <span class="chip chip-blue">MBA</span>
+                    </div>
+                    <div class="review-meta">
+                        <div class="review-avatar">M</div>
+                        <div class="review-info">
+                            <strong>M** 님</strong>
+                            <span>NYU Stern MBA · 2024년 가을 입학</span>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+
+            </div><!-- /reviews-grid -->
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-sm" style="background:var(--navy-mid); border-top:1px solid var(--navy-border);">
+        <div class="container" style="text-align:center; max-width:540px;">
+            <h2 class="t-heading fade-up" style="margin-bottom:1rem;">다음 합격 수기의 주인공이 되세요</h2>
+            <p class="fade-up" style="color:var(--text-body); margin-bottom:2rem;">초안 없어도 됩니다. 아이디어만 있어도 시작할 수 있어요.</p>
+            <a href="inquiry.html" class="btn btn-primary fade-up">견적 요청하기 →</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top:none; padding-top:0;">
+                <p>© 2025 MasterSOP. All rights reserved. 개인정보 마스킹 완료.</p>
+                <div class="ag-badge">Powered by Anti-Gravity Engine · Data Secured</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Filter Reviews
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('#reviewsContainer .review-card-lg');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                cards.forEach(card => {
+                    const tags = card.dataset.tags || '';
+                    if (filter === 'all' || tags.includes(filter)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
