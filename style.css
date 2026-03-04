@@ -771,3 +771,69 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .reviews-grid { grid-template-columns: 1fr; }
   .process-steps { grid-template-columns: 1fr; }
 }
+
+/* ── KakaoTalk Button ───────────────────────────────────── */
+.btn-kakao {
+  background: #FEE500;
+  color: #191919;
+  border: 1px solid #FEE500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 1rem 2.2rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-kakao:hover {
+  background: #F5DA00;
+  border-color: #F5DA00;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(254, 229, 0, 0.35);
+}
+/* Floating KakaoTalk button */
+.kakao-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 900;
+  background: #FEE500;
+  color: #191919;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+.kakao-float:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
+.kakao-float-label {
+  position: fixed;
+  bottom: 5.4rem;
+  right: 1.2rem;
+  z-index: 901;
+  background: #191919;
+  color: #FEE500;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.8rem;
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.kakao-float:hover ~ .kakao-float-label { opacity: 1; transform: translateY(0); }
